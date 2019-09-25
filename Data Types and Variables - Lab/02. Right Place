@@ -1,0 +1,8 @@
+function we(one, two1, three) {
+    let aString = one.replace('_', two1);
+    if (aString == three) {
+        console.log('Matched');
+    } else {
+        console.log('Not Matched');
+    }
+}
