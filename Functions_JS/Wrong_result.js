@@ -1,13 +1,17 @@
 function solve(one, two, three) {
-    let arr = [one, two, three];
-    let counter = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] <= 0) {
-            counter++;
-        }
+    let result = '';
+
+    if (one >= 0 && two >= 0 && three >= 0) {
+        result = 'Positive';
+    } else if (one <= 0 && two <= 0 && three <= 0) {
+        result = 'Negative';
+    } else if (one <= 0 && two <= 0 ||
+        three <= 0 && one <= 0 ||
+        three <= 0 && two <= 0) {
+        result = 'Positive';
+    } else if (one <= 0 || two <= 0 || three <= 0) {
+        result = 'Negative';
     }
-    result = '';
-    counter % 2 !== 0 ? result = 'Negative' : result = "Positive"
     console.log(result);
 }
-solve(5, 12, -15);
+solve(5, -12, -15);
